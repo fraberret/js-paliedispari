@@ -1,4 +1,3 @@
-console.log('it works');
 
 /*L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) Dichiariamo chi ha vinto.*/
@@ -16,10 +15,10 @@ function sum(num1, num2) {
 //controlla se un numero è pari o dispari
 function oddOrEven(number) {
     if (number % 2 == 0) {
-        return "Paro"
+        return "Pari"
 
     } else {
-        return "Disparo"
+        return "Dispari"
     }
 }
 
@@ -32,6 +31,8 @@ document.querySelector('button').addEventListener('click', function (e) {
 
     //l'utente sceglie se pari o dispari
     let userChoose = document.getElementById('pariodispari').value
+
+
 
     console.log(userNumber, userChoose
     );
@@ -47,30 +48,20 @@ document.querySelector('button').addEventListener('click', function (e) {
     let parioDispari = oddOrEven(finalNumber)
     //console.log(parioDispari)
     //console.log(userChoose)
-    
+
     //SE la scelta dell utente è uguale al risultato della somma
     if (userChoose == parioDispari) {
-        alert('Hai vinto!')
-    
+        document.querySelector('.results').innerHTML = `<div id="result" class="alert alert-success">Hai Vinto!</div>`
+
 
     } else {
-        alert('Hai perso!')
-    }
+        document.querySelector('.results').innerHTML = `<div id="result" class="alert alert-danger">Hai Perso!</div>`
 
+    }
+    document.querySelector('.results').innerHTML += `<div    id="result"> <h6 class="text-danger">Il numero del computer è: ${pcNumber}</h6></div>`
+    document.querySelector('.results').innerHTML += `<div id="result"> La somma dei due numeri è: ${finalNumber}</div>`
+    document.querySelector('.results').innerHTML += `<div id="result"> Hai scelto: ${userChoose}</div>`
+    document.querySelector('.results').innerHTML += `<div id="result">Il risultato è: ${parioDispari}</div>`
 
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-//console.log(sum(pcNumber,userNumber));
-
