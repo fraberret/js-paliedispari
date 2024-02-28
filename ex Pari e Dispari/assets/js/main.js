@@ -2,17 +2,28 @@
 /*L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) Dichiariamo chi ha vinto.*/
 
-//genera un numero random da 1 a 5
+/** genera un numero da 1 a 5
+ * @param {number}
+ * @returns {number} 
+ */
 function randomNumber() {
     return Math.floor(Math.random() * 5) + 1;
 }
 
-//esegue la somma di due numeru
+/** esegue la somma di due numeri
+ * @param {number} num1 
+ * @param {number} num2 
+ * @returns {number}
+ * 
+ */
 function sum(num1, num2) {
     return Number(num1) + Number(num2)
 }
 
-//controlla se un numero è pari o dispari
+/** controlla se un numero è pari o dispari
+ * @param {number} number 
+ * @returns {string}
+ */
 function oddOrEven(number) {
     if (number % 2 == 0) {
         return "Pari"
@@ -31,11 +42,6 @@ document.querySelector('button').addEventListener('click', function (e) {
 
     //l'utente sceglie se pari o dispari
     let userChoose = document.getElementById('pariodispari').value
-
-
-
-    console.log(userNumber, userChoose
-    );
 
     //numero del pc generato dalla funzione
     let pcNumber = randomNumber()
